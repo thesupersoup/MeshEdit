@@ -16,8 +16,7 @@ namespace MeshEdit
                      KEY_MOD_COL = "modCol",
                      KEY_SHOW_MESH = "showMesh",
                      KEY_SAVE_CLOSE = "saveOnClose";
-        const float TITLE_HEIGHT = 32.0f,   // Px?
-                    MAIN_HEIGHT = 128.0f;
+        const float TITLE_HEIGHT = 32.0f;   // Px
 
         private static MeshEdit _i = null;
 
@@ -27,12 +26,11 @@ namespace MeshEdit
         }
 
         private static bool _dev = false;           // Dev mode
-        private static bool _editing = false;       // Editing in progress?
+        private static bool _editing = false;       // Is editing in progress
         private static bool _editOnOpen;            // Edit selection on open
         private static bool _modCol;                // Modify collision
         private static bool _showMesh;              // Show mesh during editing
         private static bool _saveOnClose;           // Save if the window is closed (true), or discard changes
-        private static SceneView _view = null;      // For hooking into and decoupling from the SceneView.onSceneGUIDelegate
         private static GameObject _vertPrefab;      // Prefab for the vertex object during editing
         private GameObject[] _selected = null,
                              _prevSelected = null,
