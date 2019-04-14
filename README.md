@@ -3,6 +3,7 @@
   
 #### Getting Started:
 After placing the MeshEdit folder into *%YourProjectName%/Assets*, you can open MeshEdit by navigating to ***Window->MeshEdit*** or by pressing ***Ctrl+Shift+E***.  
+  
 **Editing is perfectly safe**, as all work is done to a copy of the original object and can be undone. MeshEdit settings are saved to your EditorPrefs for persistence.  
 > If ***Edit on open*** is active, whenever and however the window is opened, any selected GameObjects will be immediately dissolved for editing. Likewise, if ***Save on window close*** is active, whenever and however the window is closed, changes will be saved back to the meshes being edited.  
   
