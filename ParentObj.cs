@@ -10,8 +10,10 @@ namespace MeshEdit
     {
         private bool _showMesh = false;
         private int _index = -1;
-        private Mesh _mesh = null;
+        private MeshFilter _filter = null;
+		[SerializeField]
         private GameObject[] _vertObjs = null;
+		[SerializeField]
         private VertexObj[] _verts = null;  
 
         public int Index
@@ -20,10 +22,10 @@ namespace MeshEdit
             set { _index = value; }
         }
 
-        public void Init(int nIndex, Mesh nMesh)
+        public void Init(int nIndex, MeshFilter nFilter)
         {
             _index = nIndex;
-            _mesh = nMesh;
+            _filter = nFilter;
         }
 
         public void AssignVerts(GameObject[] nVerts)
@@ -39,9 +41,9 @@ namespace MeshEdit
 
         private void Refresh()
         {
-            if (_mesh != null && _verts != null)
+            if (_filter != null && _verts != null)
             {
-                Vector3[] _vertVects = _mesh.vertices;
+                Vector3[] _vertVects = _filter.sharedMesh.vertices;
 
                 for (int i = 0; i < _verts.Length; i++)
                 {
@@ -52,7 +54,7 @@ namespace MeshEdit
                     }
                 }
 
-                _mesh.vertices = _vertVects;   // Update mesh
+                _filter.sharedMesh.vertices = _vertVects;   // Update mesh
             }
         }
 
